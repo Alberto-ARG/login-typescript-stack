@@ -1,0 +1,115 @@
+---
+interface Props {
+  title?: string;
+}
+const { title = 'Auth Demo' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+  </head>
+  <body>
+    <slot />
+    <style is:global>
+      :root {
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, -apple-system, sans-serif;
+        margin: 0;
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        background: #0f172a;
+        color: #e2e8f0;
+        padding: 1rem;
+      }
+      .card {
+        background: #1e293b;
+        padding: 2rem;
+        border-radius: 14px;
+        width: min(380px, 92vw);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.45);
+      }
+      h1 {
+        margin: 0 0 1.5rem;
+        font-size: 1.5rem;
+      }
+      label {
+        display: block;
+        font-size: 0.82rem;
+        margin: 0.9rem 0 0.3rem;
+        color: #94a3b8;
+      }
+      input {
+        width: 100%;
+        padding: 0.65rem 0.8rem;
+        border-radius: 8px;
+        border: 1px solid #334155;
+        background: #0f172a;
+        color: #e2e8f0;
+        font-size: 1rem;
+      }
+      input:focus {
+        outline: 2px solid #6366f1;
+        border-color: transparent;
+      }
+      button {
+        width: 100%;
+        margin-top: 1.4rem;
+        padding: 0.72rem;
+        border: 0;
+        border-radius: 8px;
+        background: #6366f1;
+        color: white;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+      }
+      button:hover:not(:disabled) {
+        background: #4f46e5;
+      }
+      button:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      button.secondary {
+        background: transparent;
+        border: 1px solid #334155;
+      }
+      button.secondary:hover:not(:disabled) {
+        background: #334155;
+      }
+      .error {
+        color: #f87171;
+        font-size: 0.85rem;
+        margin-top: 0.9rem;
+      }
+      .muted {
+        color: #94a3b8;
+        font-size: 0.85rem;
+        margin-top: 1.2rem;
+        text-align: center;
+      }
+      a {
+        color: #818cf8;
+      }
+      .hint {
+        background: #0f172a;
+        border: 1px dashed #334155;
+        border-radius: 8px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.78rem;
+        color: #64748b;
+        margin-bottom: 1.2rem;
+      }
+    </style>
+  </body>
+</html>

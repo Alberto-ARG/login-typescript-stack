@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import LoginForm from '../components/LoginForm.tsx';
+---
+
+<Layout title="Iniciar sesión">
+  <div class="card">
+    <h1>Iniciar sesión</h1>
+    <LoginForm client:load />
+    <p class="muted">¿No tenés cuenta? <a href="/register">Registrate</a></p>
+  </div>
+</Layout>

@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import RegisterForm from '../components/RegisterForm.tsx';
+---
+
+<Layout title="Crear cuenta">
+  <div class="card">
+    <h1>Crear cuenta</h1>
+    <RegisterForm client:load />
+    <p class="muted">¿Ya tenés cuenta? <a href="/">Iniciá sesión</a></p>
+  </div>
+</Layout>
