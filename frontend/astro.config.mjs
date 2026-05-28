@@ -1,6 +1,8 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
 
+const backendUrl = process.env.BACKEND_URL ?? 'http://localhost:3000';
+
 // https://astro.build/config
 export default defineConfig({
   integrations: [react()],
@@ -12,7 +14,7 @@ export default defineConfig({
       // como first-party (SameSite=Lax) y no hace falta configurar CORS.
       proxy: {
         '/api': {
-          target: 'http://localhost:3000',
+          target: backendUrl,
           changeOrigin: true,
         },
       },
