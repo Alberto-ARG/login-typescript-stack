@@ -65,3 +65,23 @@ nuevo).
 - El guard del dashboard es del lado del cliente (suficiente para el demo).
   Para protección real-real conviene además validar la sesión en el servidor
   (middleware de Next.js o SSR en Astro reenviando la cookie).
+
+## Docker + Nginx (un solo puerto publico)
+
+Ahora hay un `nginx` al frente para exponer **solo un puerto** al host:
+
+- `nginx`: `http://localhost` (puerto 80)
+- `frontend`: interno en `frontend:4321` (no expuesto al host)
+- `backend`: interno en `backend:3000` (no expuesto al host)
+
+Levantar todo:
+
+```bash
+docker compose up --build
+```
+
+Abrir la app en:
+
+```text
+http://localhost
+```
